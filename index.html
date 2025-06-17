@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JP Fundición - Especialistas en Fundición de Metales</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-container">
+      <div class="whatsapp-tooltip" id="whatsapp-tooltip">
+        <div class="tooltip-text">¿Tienes alguna duda?</div>
+        <div class="tooltip-subtext">¡Clickea el icono y escribinos!</div>
+      </div>
+      <button class="whatsapp-button" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.jpg-KVRipUQjkVaJyVTtqRwTHUpH2mRsLt.jpeg"
+            alt="JP Fundición"
+            class="logo-img"
+          />
+          <h2>JP Fundición</h2>
+        </div>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#inicio" class="nav__link active-link">Inicio</a>
+            </li>
+            <li class="nav__item">
+              <a href="#servicios" class="nav__link">Servicios</a>
+            </li>
+            <li class="nav__item">
+              <a href="#nosotros" class="nav__link">Sobre Nosotros</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacto" class="nav__link">Contacto</a>
+            </li>
+          </ul>
+          <div class="nav__close" id="nav-close">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Hero Section with New Banner -->
+      <section class="hero section" id="inicio">
+        <div class="hero__bg"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__container container">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Especialistas en
+              <span class="hero__title-accent">Fundición de Metales</span>
+            </h1>
+            <p class="hero__description">
+              Con más de una década de experiencia, JP Fundición ofrece
+              servicios de alta calidad en moldeo y fundición, combinando
+              técnicas tradicionales con tecnología moderna.
+            </p>
+            <div class="hero__buttons">
+              <a href="#servicios" class="hero__button hero__button--primary">
+                Conocé nuestros servicios
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <button
+                class="hero__button hero__button--secondary"
+                id="hero-whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i>
+                Contactar por WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="hero__scroll">
+          <a href="#servicios" class="hero__scroll-button">
+            <i class="fas fa-mouse"></i>
+            <span>Scroll</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services section" id="servicios">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Nuestros Servicios</h2>
+            <p class="section__subtitle">
+              Ofrecemos una amplia gama de servicios especializados en fundición
+            </p>
+          </div>
+          <div class="services__container">
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="fas fa-hammer"></i>
+              </div>
+              <h3 class="service__title">Moldeo en Tierra</h3>
+              <p class="service__description">
+                Técnica tradicional para piezas de gran tamaño y formas
+                complejas, utilizando moldes de arena y arcilla.
+              </p>
+            </div>
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="fas fa-cube"></i>
+              </div>
+              <h3 class="service__title">Moldeo en Arena</h3>
+              <p class="service__description">
+                Proceso versátil ideal para prototipos y series pequeñas, con
+                excelente precisión dimensional.
+              </p>
+            </div>
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="fas fa-fire"></i>
+              </div>
+              <h3 class="service__title">Fundición en Coquilla</h3>
+              <p class="service__description">
+                Fundición en moldes metálicos permanentes para alta producción y
+                acabado superficial superior.
+              </p>
+            </div>
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="fas fa-cog"></i>
+              </div>
+              <h3 class="service__title">Noyería</h3>
+              <p class="service__description">
+                Fabricación de machos y núcleos para crear cavidades internas en
+                las piezas fundidas.
+              </p>
+            </div>
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3 class="service__title">Terminación</h3>
+              <p class="service__description">
+                Acabado final de piezas incluyendo desbarbado, pulido y
+                tratamientos superficiales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about section" id="nosotros">
+        <div class="container">
+          <div class="about__container">
+            <div class="about__data">
+              <div class="section__header">
+                <h2 class="section__title">Sobre Nosotros</h2>
+                <p class="section__subtitle">
+                  Tradición y calidad en cada proyecto
+                </p>
+              </div>
+              <p class="about__description">
+                JP Fundición nació de la pasión por el trabajo artesanal y la
+                precisión técnica. Desde nuestros inicios, nos hemos dedicado a
+                ofrecer soluciones integrales en fundición de metales,
+                combinando métodos tradicionales con tecnología moderna.
+              </p>
+              <p class="about__description">
+                Nuestro compromiso con la calidad nos ha posicionado como
+                referentes en el sector, trabajando con empresas de diversos
+                rubros que confían en nuestra experiencia y dedicación para
+                materializar sus proyectos más exigentes.
+              </p>
+              <div class="about__values">
+                <h3 class="values__title">Nuestros Valores</h3>
+                <div class="value__item">
+                  <i class="fas fa-bullseye"></i>
+                  <div>
+                    <h4>Compromiso</h4>
+                    <p>Dedicación total en cada proyecto que emprendemos</p>
+                  </div>
+                </div>
+                <div class="value__item">
+                  <i class="fas fa-award"></i>
+                  <div>
+                    <h4>Calidad</h4>
+                    <p>Estándares de excelencia en cada proceso</p>
+                  </div>
+                </div>
+                <div class="value__item">
+                  <i class="fas fa-shield-alt"></i>
+                  <div>
+                    <h4>Confianza</h4>
+                    <p>Relaciones duraderas basadas en la transparencia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about__image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nosotrosJP-gNyEwCUGDsEdsZOmNla2Q1IEJHuOTd.png"
+                alt="Equipo JP Fundición"
+                class="about__img"
+              />
+              <div class="about__image-overlay">
+                <div class="about__image-text">
+                  <h4>Nuestro Equipo</h4>
+                  <p>Profesionales especializados con años de experiencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact section" id="contacto">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Contacto</h2>
+            <p class="section__subtitle">
+              Estamos aquí para ayudarte con tu proyecto
+            </p>
+          </div>
+          <div class="contact__container">
+            <div class="contact__info">
+              <div class="contact__card">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Teléfono</h4>
+                  <p>+54 249 460-0615</p>
+                </div>
+              </div>
+              <div class="contact__card">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@jpfundicion.com</p>
+                </div>
+              </div>
+              <div class="contact__card">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Ubicación</h4>
+                  <p>Parque Industrial, Ruta 226, Tandil, Buenos Aires</p>
+                </div>
+              </div>
+            </div>
+            <form class="contact__form" id="contact-form">
+              <div class="form__group">
+                <input
+                  type="text"
+                  name="name"
+                  class="form__input"
+                  placeholder="Nombre completo"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <input
+                  type="email"
+                  name="email"
+                  class="form__input"
+                  placeholder="Correo electrónico"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <textarea
+                  name="message"
+                  class="form__input form__textarea"
+                  placeholder="Mensaje"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="form__button">
+                Enviar mensaje
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Map Section with Correct Location -->
+          <div class="map__container">
+            <div class="map__header">
+              <h3 class="map__title">Nuestra Ubicación</h3>
+              <p class="map__subtitle">
+                Parque Industrial, Ruta 226, Tandil, Buenos Aires
+              </p>
+            </div>
+            <div class="map__frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3174.1695186702977!2d-59.189509!3d-37.291115999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDE3JzI4LjAiUyA1OcKwMTEnMjIuMiJX!5e0!3m2!1ses-419!2sar!4v1750185737363!5m2!1ses-419!2sar"
+                width="100%"
+                height="400"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="JP Fundición - Ubicación exacta en Parque Industrial Tandil"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__container">
+          <div class="footer__content">
+            <div class="footer__section">
+              <div class="footer__logo">
+                <img
+                  src="./pages/logo.jpg"
+                  alt="JP Fundición"
+                  class="footer__logo-img"
+                />
+                <h3 class="footer__title">JP Fundición</h3>
+              </div>
+              <p class="footer__description">
+                Especialistas en fundición de metales con más de una década de
+                experiencia en Tandil, Buenos Aires.
+              </p>
+              <div class="footer__social">
+                <a href="#" class="footer__social-link">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="footer__social-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="footer__social-link">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+            <div class="footer__section">
+              <h4 class="footer__subtitle">Enlaces Rápidos</h4>
+              <ul class="footer__links">
+                <li><a href="#inicio" class="footer__link">Inicio</a></li>
+                <li><a href="#servicios" class="footer__link">Servicios</a></li>
+                <li>
+                  <a href="#nosotros" class="footer__link">Sobre Nosotros</a>
+                </li>
+                <li><a href="#contacto" class="footer__link">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="footer__section">
+              <h4 class="footer__subtitle">Servicios</h4>
+              <ul class="footer__links">
+                <li><a href="#" class="footer__link">Moldeo en Tierra</a></li>
+                <li><a href="#" class="footer__link">Moldeo en Arena</a></li>
+                <li>
+                  <a href="#" class="footer__link">Fundición en Coquilla</a>
+                </li>
+                <li><a href="#" class="footer__link">Noyería</a></li>
+                <li><a href="#" class="footer__link">Terminación</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p>&copy; 2024 JP Fundición. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+      <div class="notification__content">
+        <i class="notification__icon"></i>
+        <span class="notification__text"></span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
