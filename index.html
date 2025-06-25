@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JP Fundición - Especialistas en Fundición de Metales</title>
+    <title>
+      JP Fundición - Especialistas en Fundición de Hierro Gris y Aleaciones
+    </title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -64,7 +66,7 @@
 
     <!-- Main -->
     <main class="main">
-      <!-- Hero Section with New Banner -->
+      <!-- Hero Section -->
       <section class="hero section" id="inicio">
         <div class="hero__bg"></div>
         <div class="hero__overlay"></div>
@@ -72,7 +74,9 @@
           <div class="hero__content">
             <h1 class="hero__title">
               Especialistas en
-              <span class="hero__title-accent">Fundición de Metales</span>
+              <span class="hero__title-accent"
+                >Fundición de Hierro Gris y Aleaciones</span
+              >
             </h1>
             <p class="hero__description">
               Con más de una década de experiencia, JP Fundición ofrece
@@ -82,7 +86,6 @@
             <div class="hero__buttons">
               <a href="#servicios" class="hero__button hero__button--primary">
                 Conocé nuestros servicios
-                <i class="fas fa-arrow-right"></i>
               </a>
               <button
                 class="hero__button hero__button--secondary"
@@ -111,56 +114,266 @@
               Ofrecemos una amplia gama de servicios especializados en fundición
             </p>
           </div>
-          <div class="services__container">
+
+          <div class="services__grid">
+            <!-- Moldeo en Tierra -->
             <div class="service__card">
-              <div class="service__icon">
-                <i class="fas fa-hammer"></i>
+              <div class="service__visual">
+                <div class="service__carousel">
+                  <div class="carousel__track">
+                    <div class="carousel__slide active">
+                      <img
+                        src="./pages/moldeoTierra1.jpg"
+                        alt="Moldeo en Tierra - Proceso"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/moldeoTierra2.jpg"
+                        alt="Moldeo en Tierra - Moldes"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/moldeoTierra3.jpg"
+                        alt="Moldeo en Tierra - Resultado"
+                        class="carousel__image"
+                      />
+                    </div>
+                  </div>
+                  <button class="carousel__btn carousel__btn--prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="carousel__btn carousel__btn--next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="carousel__indicators">
+                    <button
+                      class="carousel__indicator active"
+                      data-slide="0"
+                    ></button>
+                    <button class="carousel__indicator" data-slide="1"></button>
+                    <button class="carousel__indicator" data-slide="2"></button>
+                  </div>
+                </div>
               </div>
-              <h3 class="service__title">Moldeo en Tierra</h3>
-              <p class="service__description">
-                Técnica tradicional para piezas de gran tamaño y formas
-                complejas, utilizando moldes de arena y arcilla.
-              </p>
+              <div class="service__content">
+                <h3 class="service__title">Moldeo en Tierra</h3>
+                <p class="service__description">
+                  Fundición de hierro mediante moldeo en tierra; una técnica
+                  tradicional, artesanal y eficaz para la fabricación de piezas
+                  metálicas con gran resistencia y precisión.
+                </p>
+                <div class="service__features">
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Técnica tradicional
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Alta resistencia
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Gran precisión
+                  </span>
+                </div>
+              </div>
             </div>
+
+            <!-- Moldeo en Arena -->
             <div class="service__card">
-              <div class="service__icon">
-                <i class="fas fa-cube"></i>
+              <div class="service__visual">
+                <div class="service__carousel">
+                  <div class="carousel__track">
+                    <div class="carousel__slide active">
+                      <img
+                        src="./pages/moldeoArena1.jpg"
+                        alt="Moldeo en Arena - Proceso"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/moldeoArena2.jpg"
+                        alt="Moldeo en Arena - Técnica"
+                        class="carousel__image"
+                      />
+                    </div>
+                  </div>
+                  <button class="carousel__btn carousel__btn--prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="carousel__btn carousel__btn--next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="carousel__indicators">
+                    <button
+                      class="carousel__indicator active"
+                      data-slide="0"
+                    ></button>
+                    <button class="carousel__indicator" data-slide="1"></button>
+                    <button class="carousel__indicator" data-slide="2"></button>
+                  </div>
+                </div>
               </div>
-              <h3 class="service__title">Moldeo en Arena</h3>
-              <p class="service__description">
-                Proceso versátil ideal para prototipos y series pequeñas, con
-                excelente precisión dimensional.
-              </p>
+              <div class="service__content">
+                <h3 class="service__title">Moldeo en Arena</h3>
+                <p class="service__description">
+                  Una técnica avanzada que combina precisión y eficiencia para
+                  piezas de alta calidad y acabados detallados, ideales para
+                  geometrías complejas.
+                </p>
+                <div class="service__features">
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Técnica avanzada
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Alta calidad
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Geometrías complejas
+                  </span>
+                </div>
+              </div>
             </div>
+
+            <!-- Noyería -->
             <div class="service__card">
-              <div class="service__icon">
-                <i class="fas fa-fire"></i>
+              <div class="service__visual">
+                <div class="service__carousel">
+                  <div class="carousel__track">
+                    <div class="carousel__slide active">
+                      <img
+                        src="./pages/noyeria1.jpg"
+                        alt="Noyería - Shell"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/noyeria2.jpg"
+                        alt="Noyería - Cold Box"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/noyeria3.jpg"
+                        alt="Noyería - Tradicional"
+                        class="carousel__image"
+                      />
+                    </div>
+                  </div>
+                  <button class="carousel__btn carousel__btn--prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="carousel__btn carousel__btn--next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="carousel__indicators">
+                    <button
+                      class="carousel__indicator active"
+                      data-slide="0"
+                    ></button>
+                    <button class="carousel__indicator" data-slide="1"></button>
+                    <button class="carousel__indicator" data-slide="2"></button>
+                  </div>
+                </div>
               </div>
-              <h3 class="service__title">Fundición en Coquilla</h3>
-              <p class="service__description">
-                Fundición en moldes metálicos permanentes para alta producción y
-                acabado superficial superior.
-              </p>
+              <div class="service__content">
+                <h3 class="service__title">Noyería</h3>
+                <p class="service__description">
+                  Somos especialistas en la producción de noyos (machos) para
+                  procesos de fundición en hierro. Fabricamos bajo tres
+                  tecnologías clave.
+                </p>
+                <div class="service__features">
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Noyos Shell (Cáscara)
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Lino-Resina (Cold Box)
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Noyos Tradicionales
+                  </span>
+                </div>
+              </div>
             </div>
+
+            <!-- Terminación -->
             <div class="service__card">
-              <div class="service__icon">
-                <i class="fas fa-cog"></i>
+              <div class="service__visual">
+                <div class="service__carousel">
+                  <div class="carousel__track">
+                    <div class="carousel__slide active">
+                      <img
+                        src="./pages/terminacion2.jpg"
+                        alt="Terminación - Granallado"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/terminacion3.jpg"
+                        alt="Terminación - Arenado"
+                        class="carousel__image"
+                      />
+                    </div>
+                    <div class="carousel__slide">
+                      <img
+                        src="./pages/terminacion1.jpg"
+                        alt="Terminación - Pulido"
+                        class="carousel__image"
+                      />
+                    </div>
+                  </div>
+                  <button class="carousel__btn carousel__btn--prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="carousel__btn carousel__btn--next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="carousel__indicators">
+                    <button
+                      class="carousel__indicator active"
+                      data-slide="0"
+                    ></button>
+                    <button class="carousel__indicator" data-slide="1"></button>
+                    <button class="carousel__indicator" data-slide="2"></button>
+                  </div>
+                </div>
               </div>
-              <h3 class="service__title">Noyería</h3>
-              <p class="service__description">
-                Fabricación de machos y núcleos para crear cavidades internas en
-                las piezas fundidas.
-              </p>
-            </div>
-            <div class="service__card">
-              <div class="service__icon">
-                <i class="fas fa-tools"></i>
+              <div class="service__content">
+                <h3 class="service__title">Terminación</h3>
+                <p class="service__description">
+                  Acabado final de piezas incluyendo desbarbado, pulido,
+                  tratamientos superficiales, servicio de granallado y arenado.
+                </p>
+                <div class="service__features">
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Granallado profesional
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Arenado especializado
+                  </span>
+                  <span class="service__feature">
+                    <i class="fas fa-check"></i>
+                    Pulido de precisión
+                  </span>
+                </div>
               </div>
-              <h3 class="service__title">Terminación</h3>
-              <p class="service__description">
-                Acabado final de piezas incluyendo desbarbado, pulido y
-                tratamientos superficiales.
-              </p>
             </div>
           </div>
         </div>
@@ -246,21 +459,21 @@
                 <i class="fas fa-phone"></i>
                 <div>
                   <h4>Teléfono</h4>
-                  <p>+54 249 460-0615</p>
+                  <p>+54 9 249 458-7615</p>
                 </div>
               </div>
               <div class="contact__card">
                 <i class="fas fa-envelope"></i>
                 <div>
                   <h4>Email</h4>
-                  <p>info@jpfundicion.com</p>
+                  <p>jpfundicion@gmail.com</p>
                 </div>
               </div>
               <div class="contact__card">
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
                   <h4>Ubicación</h4>
-                  <p>Parque Industrial, Ruta 226, Tandil, Buenos Aires</p>
+                  <p>Calle 7 280, Tandil, Buenos Aires</p>
                 </div>
               </div>
             </div>
@@ -299,24 +512,22 @@
             </form>
           </div>
 
-          <!-- Map Section with Correct Location -->
+          <!-- Map Section -->
           <div class="map__container">
             <div class="map__header">
               <h3 class="map__title">Nuestra Ubicación</h3>
-              <p class="map__subtitle">
-                Parque Industrial, Ruta 226, Tandil, Buenos Aires
-              </p>
+              <p class="map__subtitle">Calle 7 280, Tandil, Buenos Aires</p>
             </div>
             <div class="map__frame">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3174.1695186702977!2d-59.189509!3d-37.291115999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDE3JzI4LjAiUyA1OcKwMTEnMjIuMiJX!5e0!3m2!1ses-419!2sar!4v1750185737363!5m2!1ses-419!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3174.446229695761!2d-59.19197842413925!3d-37.28455677211301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1ses-419!2sar!4v1750882046737!5m2!1ses-419!2sar"
                 width="100%"
                 height="400"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="JP Fundición - Ubicación exacta en Parque Industrial Tandil"
+                title="JP Fundición - Calle 7 280, Tandil, Buenos Aires"
               >
               </iframe>
             </div>
@@ -333,15 +544,15 @@
             <div class="footer__section">
               <div class="footer__logo">
                 <img
-                  src="./pages/logo.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.jpg-KVRipUQjkVaJyVTtqRwTHUpH2mRsLt.jpeg"
                   alt="JP Fundición"
                   class="footer__logo-img"
                 />
                 <h3 class="footer__title">JP Fundición</h3>
               </div>
               <p class="footer__description">
-                Especialistas en fundición de metales con más de una década de
-                experiencia en Tandil, Buenos Aires.
+                Especialistas en fundición de hierro gris y aleaciones con más
+                de una década de experiencia en Tandil, Buenos Aires.
               </p>
               <div class="footer__social">
                 <a href="#" class="footer__social-link">
@@ -371,9 +582,6 @@
               <ul class="footer__links">
                 <li><a href="#" class="footer__link">Moldeo en Tierra</a></li>
                 <li><a href="#" class="footer__link">Moldeo en Arena</a></li>
-                <li>
-                  <a href="#" class="footer__link">Fundición en Coquilla</a>
-                </li>
                 <li><a href="#" class="footer__link">Noyería</a></li>
                 <li><a href="#" class="footer__link">Terminación</a></li>
               </ul>
