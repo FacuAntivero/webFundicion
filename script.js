@@ -34,17 +34,6 @@ function scrollHeader() {
 }
 window.addEventListener("scroll", scrollHeader);
 
-/*==================== SHOW SCROLL UP ====================*/
-function scrollUp() {
-  const scrollUp = document.getElementById("scroll-up");
-  if (scrollUp && window.scrollY >= 560) {
-    scrollUp.classList.add("show-scroll");
-  } else if (scrollUp) {
-    scrollUp.classList.remove("show-scroll");
-  }
-}
-window.addEventListener("scroll", scrollUp);
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
@@ -113,7 +102,7 @@ if (whatsappBtn && whatsappTooltip) {
   });
 }
 
-/*==================== NEW CAROUSEL FUNCTIONALITY ====================*/
+/*==================== SERVICE CAROUSEL FUNCTIONALITY ====================*/
 class ServiceCarousel {
   constructor(carouselElement) {
     this.carousel = carouselElement;
@@ -121,7 +110,128 @@ class ServiceCarousel {
     this.slides = this.carousel.querySelectorAll(".carousel__slide");
     this.prevBtn = this.carousel.querySelector(".carousel__btn--prev");
     this.nextBtn = this.carousel.querySelector(".carousel__btn--next");
+    this.indicatorsContainer = this.carousel.querySelector(
+      ".carousel__indicators"
+    );
+
+    this.currentSlide = 0;
+    this.totalSlides = this.slides.length;
+
+    // Validate elements exist before initializing
+    if (
+      this.slides.length > 0 &&
+      this.prevBtn &&
+      this.nextBtn &&
+      this.indicatorsContainer
+    ) {
+      this.createIndicators();
+      this.init();
+    }
+  }
+
+  createIndicators() {
+    // Clear existing indicators
+    this.indicatorsContainer.innerHTML = "";
+
+    // Create indicators based on number of slides
+    for (let i = 0; i < this.totalSlides; i++) {
+      const indicator = document.createElement("button");
+      indicator.className = `carousel__indicator ${i === 0 ? "active" : ""}`;
+      indicator.setAttribute("data-slide", i);
+      this.indicatorsContainer.appendChild(indicator);
+    }
+
+    // Update indicators reference
     this.indicators = this.carousel.querySelectorAll(".carousel__indicator");
+  }
+
+  init() {
+    // Add event listeners
+    this.prevBtn.addEventListener("click", () => this.prevSlide());
+    this.nextBtn.addEventListener("click", () => this.nextSlide());
+
+    // Add indicator listeners
+    this.indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => this.goToSlide(index));
+    });
+
+    // Auto-play carousel only if there are multiple slides
+    if (this.totalSlides > 1) {
+      this.startAutoPlay();
+
+      // Pause on hover
+      this.carousel.addEventListener("mouseenter", () => this.stopAutoPlay());
+      this.carousel.addEventListener("mouseleave", () => this.startAutoPlay());
+    }
+
+    // Hide navigation buttons if only one slide
+    if (this.totalSlides <= 1) {
+      this.prevBtn.style.display = "none";
+      this.nextBtn.style.display = "none";
+      this.indicatorsContainer.style.display = "none";
+    }
+  }
+
+  updateCarousel() {
+    // Hide all slides
+    this.slides.forEach((slide) => slide.classList.remove("active"));
+    this.indicators.forEach((indicator) =>
+      indicator.classList.remove("active")
+    );
+
+    // Show current slide
+    if (this.slides[this.currentSlide]) {
+      this.slides[this.currentSlide].classList.add("active");
+    }
+    if (this.indicators[this.currentSlide]) {
+      this.indicators[this.currentSlide].classList.add("active");
+    }
+  }
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+    this.updateCarousel();
+  }
+
+  prevSlide() {
+    this.currentSlide =
+      (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+    this.updateCarousel();
+  }
+
+  goToSlide(slideIndex) {
+    if (slideIndex >= 0 && slideIndex < this.totalSlides) {
+      this.currentSlide = slideIndex;
+      this.updateCarousel();
+    }
+  }
+
+  startAutoPlay() {
+    this.stopAutoPlay(); // Clear any existing interval
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 4000); // Change slide every 4 seconds
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+}
+
+/*==================== ABOUT CAROUSEL FUNCTIONALITY ====================*/
+class AboutCarousel {
+  constructor(carouselElement) {
+    this.carousel = carouselElement;
+    this.track = this.carousel.querySelector(".about__carousel-track");
+    this.slides = this.carousel.querySelectorAll(".about__carousel-slide");
+    this.prevBtn = this.carousel.querySelector(".about__carousel-btn--prev");
+    this.nextBtn = this.carousel.querySelector(".about__carousel-btn--next");
+    this.indicators = this.carousel.querySelectorAll(
+      ".about__carousel-indicator"
+    );
 
     this.currentSlide = 0;
     this.totalSlides = this.slides.length;
@@ -188,7 +298,7 @@ class ServiceCarousel {
     this.stopAutoPlay(); // Clear any existing interval
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
-    }, 4000); // Change slide every 4 seconds
+    }, 5000); // Change slide every 5 seconds (slower for about section)
   }
 
   stopAutoPlay() {
@@ -201,14 +311,25 @@ class ServiceCarousel {
 
 // Initialize all carousels when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  const carousels = document.querySelectorAll(".service__carousel");
-  carousels.forEach((carousel) => {
+  // Initialize service carousels
+  const serviceCarousels = document.querySelectorAll(".service__carousel");
+  serviceCarousels.forEach((carousel) => {
     try {
       new ServiceCarousel(carousel);
     } catch (error) {
-      console.warn("Error initializing carousel:", error);
+      console.warn("Error initializing service carousel:", error);
     }
   });
+
+  // Initialize about carousel
+  const aboutCarousel = document.querySelector(".about__carousel");
+  if (aboutCarousel) {
+    try {
+      new AboutCarousel(aboutCarousel);
+    } catch (error) {
+      console.warn("Error initializing about carousel:", error);
+    }
+  }
 });
 
 /*==================== SCROLL ANIMATIONS ====================*/
@@ -225,10 +346,11 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe service cards and value items when DOM is loaded
+// Observe elements when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   const serviceCards = document.querySelectorAll(".service__card");
   const valueItems = document.querySelectorAll(".value__item");
+  const industryCards = document.querySelectorAll(".industry__card");
 
   serviceCards.forEach((card) => {
     if (card) observer.observe(card);
@@ -236,6 +358,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   valueItems.forEach((item) => {
     if (item) observer.observe(item);
+  });
+
+  industryCards.forEach((card) => {
+    if (card) observer.observe(card);
   });
 });
 
@@ -325,6 +451,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/*==================== FAQ FUNCTIONALITY - REMOVED ====================*/
+
 /*==================== PERFORMANCE OPTIMIZATIONS ====================*/
 // Debounce function for scroll events
 function debounce(func, wait) {
@@ -341,5 +469,4 @@ function debounce(func, wait) {
 
 // Apply debounce to scroll functions
 window.addEventListener("scroll", debounce(scrollHeader, 10));
-window.addEventListener("scroll", debounce(scrollUp, 10));
 window.addEventListener("scroll", debounce(scrollActive, 10));
